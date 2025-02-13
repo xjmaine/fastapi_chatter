@@ -1,0 +1,21 @@
+installing uvicorn
+    - py -m fastapi pip install fastapi "uvicorn[standard]"
+
+
+ running the app
+ Uvicorn
+    - py -m fastapi uvicorn main:app --reload
+    - py -m uvicorn main:app --reload
+
+ or simply
+
+    - py -m fastapi dev main.py
+
+HTTP Requests
+    - get
+    - head
+    - post
+    - put
+    - delete
+    - patch
+    
