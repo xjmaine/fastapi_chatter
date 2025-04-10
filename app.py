@@ -59,6 +59,7 @@ def get_user(user_id: int)->dict:
     :param user_id:
     :return: dict
     """
+    user = get_user_from_uniqueness(user.get("email"), users)
     print(type(user_id))
     for user in users:
         if user.get("id") == user_id:
@@ -82,3 +83,30 @@ def create_user(user: dict = Body()) -> dict:
 
     return user
 
+@app.put(path="/api/v1/users/{user_id}")
+def update_user(user_id: int, user_update_data: dict) -> dict:
+    """
+    Update user by id
+    :param user_update_data:
+    :param user_id:
+    :param user:
+    :return:
+    """
+    user_to_update = get_user_from_list(user_id, users)
+    if not user_to_update:
+        return {"error": "User not found"}
+
+    user_to_update.update(user_update_data)
+
+
+def get_user_from_list(user_id: int, users_list: list[dict]) -> dict | None:
+    """
+    Get user from list
+    :param users_list:
+    :param user_id:
+    :return: dict
+    """
+    for user in users:
+        if user.get("id") == user_id:
+            return user
+    return None
