@@ -8,13 +8,15 @@ users = [
         "id": 1,
         "name": "Freddie",
         "city": "Ontario",
-        "gender": "male"
+        "gender": "male",
+        "email": "freddie@app.com"
     },
     {
         "id": 2,
         "name": "Aisha",
         "city": "Accra",
-        "gender": "female"
+        "gender": "female",
+        "email": "aisha@app.com"
     },
     {
         "id": 3,
