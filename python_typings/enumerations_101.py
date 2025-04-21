@@ -7,16 +7,24 @@ class Gender(Enum):
 
 
 male = Gender.MALE.name
+female = Gender.FEMALE.name
 
-gender = "male"
+
+gender = "Trans"
 
 result = Gender.__contains__(gender.lower())
 print(result)
 
-for i in Gender:
-    if gender.lower() == i.value:
-        print(f"Found gender: {i.name}")
+
+for gender_ in Gender:
+    if gender.lower() == gender_.value:
+        print(f"Found gender: {gender_.name}")
         break
     else:
         print("Gender not found")
 
+
+print()
+for _ in range(20):
+    print("Richard Osei")
+print()
